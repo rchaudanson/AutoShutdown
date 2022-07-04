@@ -1,8 +1,8 @@
 
 # AutoShutdown 
-
+<p align="center">
 ![AutoShutdown](http://www.linux-migration.fr/Home.jpg)
-
+</p>
 
 
 ## Auteur

@@ -1,7 +1,7 @@
 
 # AutoShutdown 
 
-![AutoShutdown](http://www.linux-migration.fr/linuxmigration/Home.jpg)
+![AutoShutdown](http://www.linux-migration.fr/Home.jpg)
 
 
 

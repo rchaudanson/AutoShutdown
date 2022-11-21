@@ -27,7 +27,7 @@ Autoshutdown is a small application that allows a user's computer to be shut dow
 
 ## Configuration
 switch off time setting: config.js ( 01 - 23 )
-
+<br><br>
 
 ## Auteur
 CHAUDANSON Raphael<br><br>

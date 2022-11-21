@@ -1,6 +1,7 @@
 const {app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, Notification} = require('electron');
 const exec = require('child_process').exec;
 const path = require("path");
+const config = require('./config.js');
 
 app.setAppUserModelId("AutoShutdown.exe");
 
@@ -10,7 +11,8 @@ app.setAppUserModelId("AutoShutdown.exe");
 
 
 let stop = "yes";
-let time = '0';
+
+
 
 
 
@@ -20,6 +22,7 @@ function createWindow() {
     frame: false,
     width: 450,
     height: 715,
+    resizable: false,
     webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
@@ -32,10 +35,11 @@ function createWindow() {
 
 
 
-    ipcMain.on('command', (event, run) => {
-    if (run == 'exit') { window.hide(); console.log(stop) }; //app.quit();
-    if (run == 'stop') { stop = "no" };
-    //exec(run, (output) => {console.log(output) })
+    ipcMain.on("toMain", (event, run) => {
+    if (run == "exit") { window.hide(); };
+    if (run == "stop" && stop == "yes") { stop = "no"; stopscheduleshutdown(); showNotificationOFF(); }
+    else if (run == "stop" && stop == "no") { stop = "yes"; scheduleshutdown(); showNotificationON(); };
+    console.log(stop)
     })
 
 
@@ -43,51 +47,88 @@ function createWindow() {
 
 
 
-    setInterval(Time, 5000);
 
-    function Time()
+
+
+
+
+
+    scheduleshutdown();
+
+
+
+
+
+
+    function dateDiff(date1, date2){
+
+    date1 = new Date();
+    date2 = new Date();
+    date2.setHours(shutdowntime);
+    date2.setMinutes('00');
+    date2.setSeconds('00');
+
+    let diff = {}
+    let tmp = date2 - date1;
+ 
+    tmp = Math.floor(tmp/1000);             // Seconds between the 2 dates
+    diff.sec = tmp % 60;
+    if (diff.sec < 10) { diff.sec = '0'+diff.sec; };
+ 
+    tmp = Math.floor((tmp-diff.sec)/60);    // Minutes
+    diff.min = tmp % 60;
+    if (diff.min < 10) { diff.min = '0'+diff.min; };
+ 
+    tmp = Math.floor((tmp-diff.min)/60);    // Hours
+    diff.hour = tmp % 24;
+    if (diff.hour < 10) { diff.hour = '0'+diff.hour; };
+     
+    tmp = Math.floor((tmp-diff.hour)/24);   // Days
+    diff.day = tmp;
+     
+    return diff;
+    } 
+
+
+
+
+
+
+    function scheduleshutdown()
+    {
+
+    date1 = new Date();
+    date2 = new Date();
+    date2.setHours(shutdowntime);
+    date2.setMinutes('00');
+    date2.setSeconds('00');
+    tmmp = date2 - date1;
+    tmmp = Math.floor(tmmp/1000);
+    console.log(tmmp);
+    
+    exec ('shutdown /s /f /t ' +tmmp+ ' /c " "', (output) => {console.log(output);
+      });
+
+    }
+
+
+
+
+
+
+
+
+    function stopscheduleshutdown()
     {
     
-    time = new Date().toLocaleTimeString();
-    //console.log(time)
+    exec ("shutdown /a", (output) => {console.log(output);
+    window.webContents.send("fromMain", "<span style='font-size:30px;'>&#128564;</span>");
+      });
     }
 
 
 
 
-
-    setInterval(Shutdown, 100000);
-
-    function Shutdown()
-    {
-
-    if (time >= '20:00:**' && time <= '20:10:**' && stop != "no" ) {
-    exec ("shutdown /s /t 60 /f /c \"Votre ordinateur va s'éteindre\"", (output) => {console.log(output);
-      })
-
-      }
-
-    }
-
-
-
-
-
-    let intervalID1 = setInterval(Popup, 300000);
-
-    function Popup()
-    {
-    if (time >= '15:00:**' && time <= '15:06:**' && stop != "no" ) {
-    
-    window.show();
-    showNotification();
-    console.log("run Popup");
-    clearInterval(intervalID1);
-    console.log("run Popup Disabled");
-
-      }
-
-    }
 
 
 
@@ -97,7 +138,7 @@ function createWindow() {
 
     function Reload()
     {
-    if (time >= '22:00:**' && time <= '23:00:**' &&  stop == "no") {
+    if (new Date().toLocaleTimeString() >= '01:00:**' && new Date().toLocaleTimeString() <= '02:00:**' &&  stop == "no") {
     
     console.log("run Reload");
     stop = "yes";
@@ -110,7 +151,8 @@ function createWindow() {
 
 
 
-    let intervalID2 = setInterval(BootPopup, 300000);
+
+    let intervalID2 = setInterval(BootPopup, 60000);
 
     function BootPopup()
     {
@@ -118,7 +160,7 @@ function createWindow() {
     
     console.log("run Bootscreen");
     window.show();
-    showNotification();
+    showNotificationON();
     
       }
 
@@ -127,6 +169,25 @@ function createWindow() {
     
     }
 
+
+
+
+
+    setInterval(CountDown, 1000);
+
+    function CountDown()
+    {
+      if (stop == "yes") {
+      console.log(new Date().toLocaleTimeString());
+
+
+      diff = dateDiff(date1, date2);
+
+      time = diff.hour+ ":" +diff.min+ ":" +diff.sec;
+      window.webContents.send("fromMain", time)
+
+      }
+    }
 
 
 
@@ -170,10 +231,14 @@ function createWindow() {
 
 
 
-function showNotification () {
-  new Notification({ title: "AutoShutdown", body: "L'arrêt automatique de votre ordinateur est prévu à 20h00.", icon: './resources/app/images/Autoshutdown.png' }).show()
+function showNotificationON () {
+  new Notification({ title: "AutoShutdown", body: "L'arrêt automatique de votre ordinateur est prévu à " +shutdowntime+ "H00.", icon: './resources/app/images/Autoshutdown.png' }).show()
 }
 
+
+function showNotificationOFF () {
+  new Notification({ title: "AutoShutdown", body: "Le prochain arrêt programmé de l'ordinateur a été annulé !", icon: './resources/app/images/Autoshutdown_red.png' }).show()
+}
 
 
 
@@ -194,7 +259,6 @@ function createTray() {
             {
                label: 'Ouvrir',
                click: function () {
-                  //shell.openExternal('https://www.google.fr');
                   window.show();
                }
             },

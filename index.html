@@ -18,6 +18,11 @@
 	<link rel="stylesheet" href="style.css">
 	<style>       ::-webkit-scrollbar {         display: none;       }   </style>
 	<style>
+
+    .clock {
+    font-weight:bold;
+    }
+
     .astext {
     background:none;
     border:none;
@@ -41,18 +46,18 @@
 
 		
 		<section id="fh5co-features">
-			<button class="astext" id="btn2" type="button">Mon PC doit être allumé à 20h00 !</button>
+			<button class="astext" id="btn2" style="color: darkgray" type="button">Désactiver l'arrêt automatique aujourd'hui</button>
 			<div class="container">
 				
 				<div class="row text-center row-bottom-padded-md">
 					<div class="col-md-8 col-md-offset-2">
 						<figure class="fh5co-devices animate-box"><img src="./images/save.jpg" class="img-responsive"></figure>
-						 
-						<p class="fh5co-sub-lead animate-box">Si votre ordinateur est encore allumé à 20h00, il sera automatiquement éteint.</p>
+						 <br>
+						<p class="clock fh5co-sub-lead animate-box">L'arrêt automatique de votre ordinateur<br>est prévu dans:</p><p class="clock" id="p1">TIME</p>
 					</div>
 				</div>
 				
-				<div style="text-align:center"><button id="btn" type="button">Valider</button>
+				<div style="text-align:center"><button id="btn" type="button" class="btn btn-success">Fermer</button>
 				</div>
 
 
@@ -66,7 +71,7 @@
 		</footer>
 		
 	</div>
-	
+
 	<script src="./renderer.js"></script>	
 	
 	

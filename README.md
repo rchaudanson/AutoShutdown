@@ -1,7 +1,8 @@
 
-# AutoShutdown 
+# AutoShutdown
+<br><br>
 <p align="center">
-  <img src="http://www.linux-migration.fr/ome1.jpg" />
+  <img src="http://www.linux-migration.fr/Home1.jpg" />
 </p>
 
 

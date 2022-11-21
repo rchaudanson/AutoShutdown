@@ -32,10 +32,12 @@ switch off time setting: config.js ( 01 - 23 )
 ## Auteur
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
+<br><br>
 
 ## Licence
 
 **GNU** General Public License
+<br><br>
 
 ## Téléchargement
 SETUP Windows x86-64: [http://www.linux-migration.fr/AutoShutdown_1.0_SETUP.exe](https://onthelight.com/1T/AutoShutdown_1.0_SETUP.exe

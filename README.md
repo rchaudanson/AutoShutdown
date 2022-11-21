@@ -30,5 +30,6 @@ rchaudanson@gmail.com
 
 **GNU** General Public License
 
-## Liens
+## Téléchargement
+SETUP Windows x86-64: http://www.linux-migration.fr/AutoShutdown_1.0_SETUP.exe
 

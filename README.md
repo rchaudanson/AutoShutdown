@@ -3,9 +3,14 @@
 <br><br>
 <p align="center">
   <img src="http://www.linux-migration.fr/Home1b.jpg" />
-</p><br><br>
+</p>
+<br><br>
 <p align="center">
   <img src="http://www.linux-migration.fr/Home2b.jpg" />
+</p>
+<br><br>
+<p align="center">
+  <img src="http://www.linux-migration.fr/Home3b.jpg" />
 </p>
 
 

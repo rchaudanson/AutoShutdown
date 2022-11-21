@@ -12,6 +12,10 @@
 <p align="center">
   <img src="http://www.linux-migration.fr/Home3b.jpg" />
 </p>
+<br><br>
+<p align="center">
+  <img src="http://www.linux-migration.fr/Home4b.jpg" />
+</p>
 
 
 ## Auteur

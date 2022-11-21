@@ -1,6 +1,6 @@
 
 # AutoShutdown
-Autoshutdown is a small application that allows a user's computer to be shut down at a predefined time.<br><br>
+AutoShutdown is a small application that allows a user's computer to be shut down at a predefined time.<br><br>
 Easily from the interface, the user can cancel the scheduled shutdown of his computer at any time for the current day, the automatic shutdown is reactivated the next day.<br><br>
 The goal is to turn off unused computers that have not been turned off by users.
 

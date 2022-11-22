@@ -10,21 +10,6 @@ The goal is to turn off unused computers that have not been turned off by users.
   <img src="http://www.linux-migration.fr/Animation.gif" />
 </p>
 <br><br>
-<p align="center">
-  <img src="http://www.linux-migration.fr/Home2b.jpg" />
-</p>
-<br><br>
-<p align="center">
-  <img src="http://www.linux-migration.fr/Home3b.jpg" />
-</p>
-<br><br>
-<p align="center">
-  <img src="http://www.linux-migration.fr/Home4b.jpg" />
-</p>
-<br><br>
-<p align="center">
-  <img src="http://www.linux-migration.fr/Home5b.jpg" />
-</p>
 
 
 ## Configuration

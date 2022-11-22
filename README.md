@@ -7,7 +7,7 @@ The goal is to turn off unused computers that have not been turned off by users.
 
 <br><br>
 <p align="center">
-  <img src="http://www.linux-migration.fr/Home1b.jpg" />
+  <img src="http://www.linux-migration.fr/Animation.gif" />
 </p>
 <br><br>
 <p align="center">

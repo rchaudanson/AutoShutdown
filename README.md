@@ -22,15 +22,15 @@ startpopup = "yes";   &ensp;&ensp;&ensp;// Show app on startup<br>
 startafter = "60000";   &ensp;&ensp;&ensp;// Show app after ( in milliseconds )
 <br><br>
 
-## Auteur
+## Author
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
 <br><br>
 
 ## Development 
-
 Electron
 https://electronjs.org
+<br><br>
 
 ## Licence
 

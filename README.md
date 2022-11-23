@@ -17,7 +17,7 @@ Edit config.js :
 
 shutdowntime = "20"; // Stop time ( 01 - 23)
 
-startpopup = "yes"; // Show app on startup
+startpopup = "yes"; // Show app on startup<br>
 startafter = "60000"; // Show app after ( in milliseconds )
 <br><br>
 

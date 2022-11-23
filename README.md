@@ -13,7 +13,7 @@ The goal is to turn off unused computers that have not been turned off by users.
 
 
 ## Configuration
-<span style="text-decoration: underline;">Edit config.js :</span><span style="text-decoration: underline;">Ce texte sera souligné.</span>
+\_Edit config.js :\_
 
 shutdowntime = "20";   &ensp;&ensp;&ensp;// Computer shutdown time in hour ( 01 - 23)
 

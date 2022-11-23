@@ -15,7 +15,7 @@ The goal is to turn off unused computers that have not been turned off by users.
 ## Configuration
 Edit config.js :
 
-shutdowntime = "20"; // Stop time ( 01 - 23)
+shutdowntime = "20"; // Computer shutdown time in hour ( 01 - 23)
 
 startpopup = "yes"; // Show app on startup<br>
 startafter = "60000"; // Show app after ( in milliseconds )

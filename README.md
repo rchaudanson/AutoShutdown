@@ -13,7 +13,8 @@ The goal is to turn off unused computers that have not been turned off by users.
 
 
 ## Configuration
-\_Edit config.js :\_
+Edit config.js :
+
 
 shutdowntime = "20";   &ensp;&ensp;&ensp;// Computer shutdown time in hour ( 01 - 23)
 

@@ -13,7 +13,12 @@ The goal is to turn off unused computers that have not been turned off by users.
 
 
 ## Configuration
-Switch off time setting:   config.js ( 01 - 23 )
+Edit config.js :
+
+shutdowntime = "20"; // Stop time ( 01 - 23)
+
+startpopup = "yes"; // Show app on startup
+startafter = "60000"; // Show app after ( in milliseconds )
 <br><br>
 
 ## Auteur

@@ -35,6 +35,8 @@ The app only supports ***HH:MM:SS****** time format
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
 <br><br>
+<br><br>
+<br><br>
 
 ## Licence
 

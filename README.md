@@ -27,7 +27,7 @@ CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
 <br><br>
 
-## Development 
+## Download 
 Electron
 https://electronjs.org
 <br><br>

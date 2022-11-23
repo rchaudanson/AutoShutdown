@@ -22,14 +22,18 @@ startpopup = "yes";   &ensp;&ensp;&ensp;// Show app on startup<br>
 startafter = "60000";   &ensp;&ensp;&ensp;// Show app after ( in milliseconds )
 <br><br>
 
+## Development 
+Electron
+https://electronjs.org
+<br><br>
+
 ## Author
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
 <br><br>
 
-## Development 
-Electron
-https://electronjs.org
+## Other
+***The app only supports HH:MM:SS time format***
 <br><br>
 
 ## Licence

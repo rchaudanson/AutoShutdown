@@ -18,7 +18,7 @@ Edit config.js :<br><br>
 
 shutdowntime = "20";   &ensp;&ensp;&ensp;// Computer shutdown time in hour ( 01 - 23)
 
-startpopup = "yes";   &ensp;&ensp;&ensp;// Show app on startup<br>
+startpopup = "yes";   &ensp;&ensp;&ensp;// show application at user login<br>
 startafter = "60000";   &ensp;&ensp;&ensp;// Show app after ( in milliseconds )
 <br><br>
 

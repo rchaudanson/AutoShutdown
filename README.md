@@ -27,13 +27,13 @@ Electron
 https://electronjs.org
 <br><br>
 
+## Caution
+The app only supports ***HH:MM:SS****** time format
+<br><br>
+
 ## Author
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
-<br><br>
-
-## Other
-***The app only supports HH:MM:SS time format***
 <br><br>
 
 ## Licence

@@ -30,12 +30,11 @@ https://electronjs.org
 ## Other
 The app only supports ***HH:MM:SS*** time format in Windows configuration
 <br><br>
+<br><br>
 
 ## Author
 CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
-<br><br>
-<br><br>
 <br><br>
 
 ## Licence

@@ -37,8 +37,8 @@ function createWindow() {
 
     ipcMain.on("toMain", (event, run) => {
     if (run == "exit") { window.hide(); };
-    if (run == "stop" && stop == "yes") { stop = "no"; stopscheduleshutdown(); showNotificationOFF(); }
-    else if (run == "stop" && stop == "no") { stop = "yes"; scheduleshutdown(); showNotificationON(); };
+    if (run == "stop" && stop == "yes") { stopscheduleshutdown(); }
+    else if (run == "stop" && stop == "no") { scheduleshutdown(); };
     console.log(stop)
     })
 
@@ -70,6 +70,7 @@ function createWindow() {
 
     let diff = {}
     let tmp = date2 - date1;
+    if (tmp < 0) { diff.exp = "yes"; return diff; };
  
     tmp = Math.floor(tmp/1000);             // Seconds between the 2 dates
     diff.sec = tmp % 60;
@@ -97,6 +98,8 @@ function createWindow() {
     function scheduleshutdown()
     {
 
+    stop = "yes";
+    showNotificationON();
     date1 = new Date();
     date2 = new Date();
     date2.setHours(shutdowntime);
@@ -120,10 +123,13 @@ function createWindow() {
 
     function stopscheduleshutdown()
     {
-    
+
+    stop = "no";
+    showNotificationOFF();
     exec ("shutdown /a", (output) => {console.log(output);
     window.webContents.send("fromMain", "<span style='font-size:30px;'>&#128564;</span>");
-      });
+    });
+
     }
 
 
@@ -138,10 +144,10 @@ function createWindow() {
 
     function Reload()
     {
-    if (new Date().toLocaleTimeString() >= '01:00:**' && new Date().toLocaleTimeString() <= '02:00:**' &&  stop == "no") {
+    if (new Date().toLocaleTimeString() >= '00:00:**' && new Date().toLocaleTimeString() <= '01:00:**' &&  stop == "no") {
     
     console.log("run Reload");
-    stop = "yes";
+    scheduleshutdown();
     window.reload();
     
       }
@@ -152,11 +158,11 @@ function createWindow() {
 
 
 
-    let intervalID2 = setInterval(BootPopup, 60000);
+    let intervalID2 = setInterval(BootPopup, startafter);
 
     function BootPopup()
     {
-    if (stop == "yes") {
+    if (stop == "yes" &&  startpopup == "yes") {
     
     console.log("run Bootscreen");
     window.show();
@@ -182,8 +188,9 @@ function createWindow() {
 
 
       diff = dateDiff(date1, date2);
-
       time = diff.hour+ ":" +diff.min+ ":" +diff.sec;
+      if (diff.exp == "yes") { time = "Demain à "+shutdowntime+"H00";}
+      
       window.webContents.send("fromMain", time)
 
       }

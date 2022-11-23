@@ -27,7 +27,7 @@ CHAUDANSON Raphael<br><br>
 rchaudanson@gmail.com
 <br><br>
 
-## Download 
+## Development 
 Electron
 https://electronjs.org
 <br><br>
@@ -37,7 +37,7 @@ https://electronjs.org
 **GNU** General Public License
 <br><br>
 
-## Téléchargement
+## Download
 SETUP Windows x86-64: [https://onthelight.com/1U/AutoShutdown1.0_SETUP.exe](https://onthelight.com/1U/AutoShutdown1.0_SETUP.exe
 )
 

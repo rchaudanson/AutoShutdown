@@ -28,7 +28,7 @@ https://electronjs.org
 <br><br>
 
 ## Other
-The app only supports ***HH:MM:SS*** time format
+The app only supports ***HH:MM:SS*** time format in Windows configuration
 <br><br>
 
 ## Author

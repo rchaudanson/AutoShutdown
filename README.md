@@ -44,5 +44,5 @@ rchaudanson@gmail.com
 
 ## Download
 SETUP Windows x86-64: [https://onthelight.com/1U/AutoShutdown1.0_SETUP.exe](https://onthelight.com/1V/AutoShutdown1.0_SETUP.exe
-)&ensp;&ensp;[Check on VirusTotal](https://www.virustotal.com/gui/file/5ef24185f0ddac6844c63b6482b5294c9c08e7a34558c0e95d33d312d913a70f)
+)&ensp;&ensp;[Check on VirusTotal](https://www.virustotal.com/gui/file/34f7a52102446ad06b7337586eb2d5ec50cedaa09dd1e211522148015d7c47cd)
 

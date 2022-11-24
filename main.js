@@ -2,8 +2,11 @@ const {app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, Notification} = req
 const exec = require('child_process').exec;
 const path = require("path");
 const config = require('./config.js');
+const gotTheLock = app.requestSingleInstanceLock()
 
 app.setAppUserModelId("AutoShutdown.exe");
+
+
 
 
 
@@ -166,7 +169,7 @@ function createWindow() {
     
     console.log("run Bootscreen");
     window.show();
-    //showNotificationON();
+    showNotificationON();
     
       }
 
@@ -295,7 +298,9 @@ tray.setTitle('AutoShutdown');
 
 
 
-
+if (!gotTheLock) {
+  app.quit()
+} else {
 
 
 app.on('ready', () => {
@@ -314,3 +319,5 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+}

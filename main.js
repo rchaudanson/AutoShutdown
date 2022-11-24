@@ -169,7 +169,7 @@ function createWindow() {
     
     console.log("run Bootscreen");
     window.show();
-    showNotificationON();
+    //showNotificationON();
     
       }
 
